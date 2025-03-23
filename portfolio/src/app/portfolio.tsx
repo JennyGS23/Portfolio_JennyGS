@@ -106,7 +106,7 @@ export default function Portfolio() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#1e1e24] shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-[#B8B3E9] text-2xl font-bold">Portfolio</div>
+          <div className="text-[#B8B3E9] text-2xl font-bold">PortfolioJGS</div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
@@ -196,7 +196,7 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="md:w-1/2 flex justify-center">
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#B8B3E9]">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#B8B3E9] ">
                     <Image src="/img/girl.jpg?height=400&width=400" alt="Profile" fill sizes="(max-width: 768px) 100vw, 50vw" priority className="object-cover"/>
                 </div>
               </div>
@@ -205,52 +205,56 @@ export default function Portfolio() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-[#1e1e24] bg-opacity-80">
+        <section id="about" className=" bg-[#1e1e24] bg-opacity-80 mb-10">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               About <span className="text-[#B8B3E9]">Me</span>
             </h2>
             <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 mb-10 md:mb-0 flex justify-center">
-                <div className="relative w-full max-w-md h-80 rounded-lg overflow-hidden">
-                  <Image src="/placeholder.svg?height=400&width=600" alt="About Me" fill className="object-cover" />
+              <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
+                <div className="relative w-full max-w-xs h-[400px] rounded-2xl overflow-hidden border-4 border-[#B8B3E9]  shadow-lg shadow-[#D1D1D1]">
+                    <Image
+                        src="/img/user.jpeg?height=400&width=300"
+                        alt="About Me"
+                        fill
+                        sizes="(max-width: 768px) 80vw, 30vw"
+                        className="object-cover"
+                    />
                 </div>
               </div>
-              <div className="md:w-1/2 md:pl-12">
+              <div className="md:w-1/2">
                 <h3 className="text-2xl font-semibold mb-4">Who am I?</h3>
                 <p className="text-gray-300 mb-6">
-                  I'm a passionate Frontend Developer with a strong foundation in building modern web applications. With
-                  5 years of experience in the industry, I specialize in creating responsive, accessible, and performant
-                  user interfaces.
+                    Computer Engineering student with 4 years of academic experience at 
+                    the Costa Rica Institute of Technology (TEC). Throughout my academic journey, I have honed my 
+                    problem-solving skills, effective communication, and teamwork abilities, which have allowed me 
+                    to successfully complete a variety of projects.
                 </p>
                 <p className="text-gray-300 mb-6">
-                  My journey in web development started when I was in college, and since then, I've worked with various
-                  technologies and frameworks to deliver exceptional digital experiences.
+                    With a passion for innovation and continuous learning, I am constantly exploring new technologies 
+                    and seeking opportunities to grow within the field of software and web development. I pride myself 
+                    on my ability to collaborate efficiently within teams, guided by clear communication and leadership. 
+                    I am committed to excellence and always aim to deliver the best in every task I take on.
                 </p>
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-2 mb-6">
                   <div>
                     <p className="text-gray-400">Name:</p>
-                    <p>Your Name</p>
+                    <p>Jennifer González</p>
                   </div>
                   <div>
                     <p className="text-gray-400">Email:</p>
-                    <p>your.email@example.com</p>
+                    <p>gonzalezsolisjennifer@gmail.com</p>
                   </div>
                   <div>
                     <p className="text-gray-400">From:</p>
-                    <p>Your Location</p>
+                    <p>San Carlos, Costa Rica</p>
                   </div>
                   <div>
                     <p className="text-gray-400">Experience:</p>
-                    <p>5 Years</p>
+                    <p> 4 years of academic experience</p>
                   </div>
                 </div>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="bg-[#B8B3E9] hover:scale-105 text-[#1e1e24] font-medium px-4 py-3 rounded-md flex items-center"
-                >
-                  Resume <ChevronRight size={18} className="ml-1" />
-                </button>
+                
               </div>
             </div>
           </div>
