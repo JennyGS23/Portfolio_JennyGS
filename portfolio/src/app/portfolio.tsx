@@ -162,11 +162,12 @@ export default function Portfolio() {
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-10 md:mb-0">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  Hi, I'm <span className="text-[#B8B3E9]">Your Name</span>
+                  Hi, I'm <span className="text-[#B8B3E9]">Jennifer Gonzalez</span>
                 </h1>
-                <h2 className="text-2xl md:text-3xl mb-6">Frontend Developer</h2>
+                <h2 className="text-2xl md:text-3xl mb-6">Computer Engineer</h2>
                 <p className="text-lg mb-8 text-gray-300 max-w-lg">
-                  I build exceptional and accessible digital experiences for the web.
+                    Welcome to my portfolio! Here you will find information about me, my projects, and the experience 
+                    I've gained throughout my career. Feel free to explore and learn more about my work and skills.
                 </p>
                 <div className="flex space-x-4">
                   <button
@@ -196,7 +197,7 @@ export default function Portfolio() {
               </div>
               <div className="md:w-1/2 flex justify-center">
                 <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#B8B3E9]">
-                  <Image src="/placeholder.svg?height=400&width=400" alt="Profile" fill className="object-cover" />
+                    <Image src="/img/girl.jpg?height=400&width=400" alt="Profile" fill sizes="(max-width: 768px) 100vw, 50vw" priority className="object-cover"/>
                 </div>
               </div>
             </div>
@@ -244,6 +245,12 @@ export default function Portfolio() {
                     <p>5 Years</p>
                   </div>
                 </div>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="bg-[#B8B3E9] hover:scale-105 text-[#1e1e24] font-medium px-4 py-3 rounded-md flex items-center"
+                >
+                  Resume <ChevronRight size={18} className="ml-1" />
+                </button>
               </div>
             </div>
           </div>
