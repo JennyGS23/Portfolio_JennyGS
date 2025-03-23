@@ -184,13 +184,13 @@ export default function Portfolio() {
                   </button>
                 </div>
                 <div className="flex mt-8 space-x-4">
-                  <a href="#" className="text-gray-300 hover:text-[#B8B3E9]">
+                  <a href="https://github.com/JennyGS23" className="text-gray-300 hover:text-[#B8B3E9]">
                     <Github size={24} />
                   </a>
-                  <a href="#" className="text-gray-300 hover:text-[#B8B3E9]">
+                  <a href="https://www.linkedin.com/in/jennifer-gonzalez-263b66265/" className="text-gray-300 hover:text-[#B8B3E9]">
                     <Linkedin size={24} />
                   </a>
-                  <a href="#" className="text-gray-300 hover:text-[#B8B3E9]">
+                  <a href="https://www.instagram.com/jenni__gs/?hl=es-es" className="text-gray-300 hover:text-[#B8B3E9]">
                     <Instagram size={24} />
                   </a>
                 </div>
