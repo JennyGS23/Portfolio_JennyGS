@@ -60,22 +60,39 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce platform with payment integration and admin dashboard.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "DiMSStreamingFrontend",
+      description: "This repository is a user interface for the Distributed Multimedia System for Content Streaming, including videos and music, similar to popular services such as Netflix and Spotify.",
+      image: "/img/DiMSStreaming.png?height=300&width=400",
+      tags: ["Python", "AWS", "JavaScript", "HTML", "CSS", "Flash"],
+      githubLink: "https://github.com/JennyGS23/DiMSStreamingFrontend",
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["React", "Firebase", "Tailwind CSS"],
+      title: "MedExpert",
+      description: "An application designed to centralize and facilitate access to patient health information, providing detailed tracking of their medical history, appointments, medications, and diagnoses.",
+      image: "/img/DiMSStreaming.png?height=300&width=400",
+      tags: ["Android", "Java", "Firebase", "HTML", "CSS", "Flash"],
+      githubLink: "https://github.com/bryan-ruiz/MedXpert",
     },
     {
-      title: "Portfolio Website",
-      description: "A responsive portfolio website built with modern web technologies.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["React", "Tailwind CSS", "Next.js"],
+      title: "CurlyLove",
+      description: "This repository contains the development of a website designed for selling products specialized in curly hair care.",
+      image: "/img/curly.PNG?height=300&width=400",
+      tags: ["React", "Firebase", "Tailwind CSS", "JavaScript"],
+      githubLink: "https://github.com/JennyGS23/CurlyLove",
+    },
+    {
+      title: "SGBD Home Credit",
+      description: "Development of a database system using SQL Server, taking as a case study the database of Home Credit, a financial services company.",
+      image: "/img/db.jpg?height=300&width=400",
+      tags: ["Python", "SQL Server"],
+      githubLink: "https://github.com/JennyGS23/SGBD-Home-Credit",
+    },
+    {
+      title: "MiniGo",
+      description: "The Mini GO Compiler project aims to implement a compiler for a subset of GoLang known as Mini GO.",
+      image: "/img/compiler.jpg?height=300&width=400",
+      tags: ["Java", "ANTLR", "Go"],
+      githubLink: "https://github.com/juanbnunez/MiniGO",
     },
   ]
 
@@ -367,15 +384,20 @@ export default function Portfolio() {
                       {project.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="bg-[#B8B3E9] bg-opacity-20 text-[#B8B3E9] text-sm px-3 py-1 rounded-full"
+                          className="border border-[#B8B3E9] bg-opacity-20 text-[#B8B3E9] text-sm px-3 py-1 rounded-full"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <button className="text-[#fff] hover:text-[#B8B3E9] font-medium flex items-center">
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#fff] hover:text-[#B8B3E9] font-medium flex items-center"
+                    >
                       View Project <ChevronRight size={16} className="ml-1" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               ))}
