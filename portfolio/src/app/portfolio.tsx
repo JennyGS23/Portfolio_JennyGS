@@ -96,26 +96,6 @@ export default function Portfolio() {
     },
   ]
 
-  const blogs = [
-    {
-      title: "Getting Started with React Hooks",
-      date: "June 15, 2023",
-      excerpt: "Learn how to use React Hooks to simplify your functional components.",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "Mastering Tailwind CSS",
-      date: "July 22, 2023",
-      excerpt: "Tips and tricks for building beautiful interfaces with Tailwind CSS.",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "The Future of Web Development",
-      date: "August 10, 2023",
-      excerpt: "Exploring upcoming trends and technologies in web development.",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-  ]
 
   if (!isMounted) {
     return null
@@ -411,34 +391,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Blogs Section */}
-        <section id="blogs" className="py-20 bg-[#1e1e24]">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-              Latest <span className="text-[#B8B3E9]">Blogs</span>
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogs.map((blog, index) => (
-                <div key={index} className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="relative h-48">
-                    <Image src={blog.image || "/placeholder.svg"} alt={blog.title} fill className="object-cover" />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-[#B8B3E9] text-sm mb-2">{blog.date}</p>
-                    <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-                    <p className="text-gray-300 mb-4">{blog.excerpt}</p>
-                    <button className="text-[#fff] hover:text-[#B8B3E9] font-medium flex items-center">
-                      Read More <ChevronRight size={16} className="ml-1" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </section>
-
+        
         {/* Contact Section */}
         <section id="contact" className="py-20 bg-[#1e1e24] bg-opacity-80">
           <div className="container mx-auto px-4">
