@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Menu, X, Code, Briefcase, User, BookOpen, Mail, ChevronRight, Github, Linkedin, Instagram} from "lucide-react"
+import { Menu, X, Code, Briefcase, User, Mail, ChevronRight, Github, Linkedin, Instagram} from "lucide-react"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJs, faHtml5, faCss3Alt, faReact, faNodeJs, faAndroid, faTrello, faGithub, faGitAlt, faAws  } from "@fortawesome/free-brands-svg-icons";
@@ -54,7 +54,6 @@ export default function Portfolio() {
     { id: "about", label: "About Me", icon: <User size={18} /> },
     { id: "skills", label: "Skills", icon: <Code size={18} /> },
     { id: "projects", label: "Projects", icon: <Briefcase size={18} /> },
-    { id: "blogs", label: "Blogs", icon: <BookOpen size={18} /> },
     { id: "contact", label: "Contact", icon: <Mail size={18} /> },
   ]
 
@@ -268,7 +267,7 @@ export default function Portfolio() {
             </h2>
 
             <div className="mb-16">
-              <h3 className="text-2xl font-semibold mb-8 text-center">Technical Skills</h3>
+              <h3 className="text-2xl font-semibold mb-8 ">Technical Skills</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
                   { name: "Python", icon: <img src="/img/piton.png" alt="Python" className="w-10 h-10 mt-2" /> },
@@ -308,7 +307,7 @@ export default function Portfolio() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-8 text-center">Soft Skills</h3>
+              <h3 className="text-2xl font-semibold mb-8">Soft Skills</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {[
                   "Leadership",
@@ -337,7 +336,7 @@ export default function Portfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 bg-[#1e1e24] bg-opacity-80">
+        <section id="projects" className=" bg-[#1e1e24] bg-opacity-80 mb-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               My <span className="text-[#B8B3E9]">Projects</span>
@@ -384,16 +383,19 @@ export default function Portfolio() {
             </div>
 
             <div className="text-center mt-12">
-              <button className="border border-[#B8B3E9] text-[#B8B3E9] hover:scale-110 hover:bg-opacity-10 font-medium px-6 py-3 rounded-md">
+              <a 
+                className="border border-[#B8B3E9] text-[#B8B3E9] hover:scale-110 hover:bg-opacity-10 font-medium px-6 py-3 rounded-md"
+                href="https://github.com/JennyGS23"  
+              >
                 View All Projects
-              </button>
+              </a>
             </div>
           </div>
         </section>
 
         
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-[#1e1e24] bg-opacity-80">
+        <section id="contact" className=" bg-[#1e1e24] bg-opacity-80 mb-10">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               Contact <span className="text-[#B8B3E9]">Me</span>
@@ -403,45 +405,34 @@ export default function Portfolio() {
               <div className="md:w-1/2">
                 <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
                 <p className="text-gray-300 mb-8">
-                  Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new
-                  projects, creative ideas, or opportunities to be part of your vision.
+                  Feel free to reach out to me for any questions or opportunities. 
                 </p>
 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-[#B8B3E9] bg-opacity-20 p-3 rounded-lg mr-4">
+                    <div className="bg-opacity-20 p-3 rounded-lg mr-4">
                       <Mail className="text-[#B8B3E9]" />
                     </div>
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <p className="text-gray-300">your.email@example.com</p>
+                      <p className="text-gray-300">gonzalezsolisjennifer@gmail.com</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="bg-[#B8B3E9] bg-opacity-20 p-3 rounded-lg mr-4">
-                      <Briefcase className="text-[#B8B3E9]" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium">Work</h4>
-                      <p className="text-gray-300">Open for freelance and full-time opportunities</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-[#B8B3E9] bg-opacity-20 p-3 rounded-lg mr-4">
+                    <div className="bg-opacity-20 p-3 rounded-lg mr-4">
                       <User className="text-[#B8B3E9]" />
                     </div>
                     <div>
                       <h4 className="font-medium">Social</h4>
                       <div className="flex mt-2 space-x-4">
-                        <a href="#" className="text-gray-300 hover:text-[#B8B3E9]">
+                        <a href="https://github.com/JennyGS23" className="text-gray-300 hover:text-[#B8B3E9]">
                           <Github size={20} />
                         </a>
-                        <a href="#" className="text-gray-300 hover:text-[#B8B3E9]">
+                        <a href="https://www.linkedin.com/in/jennifer-gonzalez-263b66265/" className="text-gray-300 hover:text-[#B8B3E9]">
                           <Linkedin size={20} />
                         </a>
-                        <a href="#" className="text-gray-300 hover:text-[#B8B3E9]">
+                        <a href="https://www.instagram.com/jenni__gs/?hl=es-es" className="text-gray-300 hover:text-[#B8B3E9]">
                           <Instagram size={20} />
                         </a>
                       </div>
@@ -517,7 +508,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="bg-gray-900 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p className="text-gray-400">&copy; {new Date().getFullYear()} 2025 Jennifer González - All Rights Reserved</p>
         </div>
       </footer>
     </div>
