@@ -1,7 +1,10 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Menu, X, Code, Briefcase, User, BookOpen, Mail, ChevronRight, Github, Linkedin, Instagram } from "lucide-react"
+import { Menu, X, Code, Briefcase, User, BookOpen, Mail, ChevronRight, Github, Linkedin, Instagram} from "lucide-react"
 import Image from "next/image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faJs, faHtml5, faCss3Alt, faReact, faNodeJs, faAndroid, faTrello, faGithub, faGitAlt, faAws  } from "@fortawesome/free-brands-svg-icons";
+import {faArrowRightArrowLeft, faBolt, faDatabase} from "@fortawesome/free-solid-svg-icons";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home")
@@ -270,16 +273,37 @@ export default function Portfolio() {
             <div className="mb-16">
               <h3 className="text-2xl font-semibold mb-8 text-center">Technical Skills</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {["HTML/CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "TypeScript", "Node.js", "Git"].map(
+              {[
+                  { name: "Python", icon: <img src="/img/piton.png" alt="Python" className="w-10 h-10 mt-2" /> },
+                  { name: "Java", icon: <img src="/img/java.png" alt="Java" className="w-12 h-12" />},
+                  { name: "Android", icon: <FontAwesomeIcon icon={faAndroid} style={{ color: "#26b51c", fontSize: "2rem" }} /> },
+                  { name: "HTML", icon: <FontAwesomeIcon icon={faHtml5} style={{ color: "#e3580d", fontSize: "2rem" }} />  },
+                  { name: "JavaScript", icon: <FontAwesomeIcon icon={faJs} style={{ color: "#FFD43B", fontSize: "2rem" }} /> },
+                  { name: "TypeScript", icon: <img src="/img/typescript.png" alt="Typescript" className="w-10 h-10" />},
+                  { name: "React", icon: <FontAwesomeIcon icon={faReact} style={{ color: "#2ea4ff", fontSize: "2rem" }} /> },
+                  { name: "Next.js", icon: <img src="/img/next.png" alt="Next" className="w-8 h-8" /> },
+                  { name: "Node.js", icon: <FontAwesomeIcon icon={faNodeJs} style={{ color: "#1f951d", fontSize: "2rem" }} /> },
+                  { name: "SQL", icon: <FontAwesomeIcon icon={faDatabase} style={{ color: "#8b6cea", fontSize: "2rem" }} /> },
+                  { name: "Firebase", icon: <img src="/img/firebase.png" alt="Firebase" className="w-10 h-10" /> },
+                  { name: "AWS", icon: <FontAwesomeIcon icon={faAws} style={{ color: "#fff", fontSize: "2rem" }} /> },
+                  { name: "CSS", icon: <FontAwesomeIcon icon={faCss3Alt} style={{ color: "#2ea4ff", fontSize: "2rem" }} /> },
+                  { name: "Tailwind CSS", icon: <img src="/img/tailwind.png" alt="Tailwind" className="w-12 h-12" /> },
+                  { name: "FastAPI", icon: <FontAwesomeIcon icon={faBolt} style={{ color: "#46af8f", fontSize: "2rem" }} /> },
+                  { name: "Flask", icon: <img src="/img/flask.png" alt="Flask" className="w-10 h-10" /> },
+                  { name: "REST API", icon: <FontAwesomeIcon icon={faArrowRightArrowLeft} style={{ color: "#e3580d", fontSize: "1.5rem" }} /> },
+                  { name: "Github", icon: <FontAwesomeIcon icon={faGithub} style={{ color: "#000", fontSize: "2rem" }} /> },
+                  { name: "Git", icon: <FontAwesomeIcon icon={faGitAlt} style={{ color: "#e3580d", fontSize: "2rem" }} />},
+                  { name: "Jira", icon: <img src="/img/jira.png" alt="Jira" className="w-8 h-8" /> },
+                  { name: "Trello", icon: <FontAwesomeIcon icon={faTrello} style={{ color: "#153874", fontSize: "2rem" }} /> },
+                  { name: "Figma", icon: <img src="/img/figma.png" alt="Figma" className="w-10 h-10" /> },
+                ].map(
                   (skill) => (
                     <div
-                      key={skill}
+                      key={skill.name}
                       className="bg-gray-800  rounded-lg p-6 text-center hover:bg-[#234250] transition-colors"
                     >
-                      <div className="text-[#B8B3E9] mb-3 flex justify-center">
-                        <Code size={32} />
-                      </div>
-                      <h4 className="font-medium">{skill}</h4>
+                      <div className="text-[#B8B3E9] mb-3 flex justify-center">{skill.icon}</div>
+                      <h4 className="font-medium">{skill.name}</h4>
                     </div>
                   ),
                 )}
@@ -290,26 +314,24 @@ export default function Portfolio() {
               <h3 className="text-2xl font-semibold mb-8 text-center">Soft Skills</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {[
+                  "Leadership",
                   "Communication",
                   "Problem Solving",
                   "Teamwork",
+                  "Discipline",
+                  "Collabotarion",
                   "Time Management",
                   "Adaptability",
                   "Creativity",
-                  "Leadership",
                   "Critical Thinking",
+                  "Work Ethic",
+                  "Responsibility",
                 ].map((skill) => (
                   <div
                     key={skill}
                     className="bg-gray-800  rounded-lg p-6 text-center hover:bg-[#234250] transition-colors"
                   >
                     <h4 className="font-medium">{skill}</h4>
-                    <div className="w-full bg-gray-700 h-2 rounded-full mt-3">
-                      <div
-                        className="bg-[#B8B3E9] h-2 rounded-full"
-                        style={{ width: `${Math.floor(Math.random() * 30) + 70}%` }}
-                      ></div>
-                    </div>
                   </div>
                 ))}
               </div>
