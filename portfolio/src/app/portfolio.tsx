@@ -1,5 +1,6 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef  } from "react"
+import emailjs from "@emailjs/browser";
 import { Menu, X, Code, Briefcase, User, Mail, ChevronRight, Github, Linkedin, Instagram} from "lucide-react"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -95,6 +96,45 @@ export default function Portfolio() {
     },
   ]
 
+ // form configuration
+  const form = useRef<HTMLFormElement | null>(null);
+  const [modalOpen, setModalOpen] = useState(false); 
+  const [messageStatus, setMessageStatus] = useState<'success' | 'error' | null>(null); 
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    if (form.current) {
+      emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+        form.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY as string 
+      )
+      .then(
+        (result) => {
+          console.log("Mensaje enviado", result.text);
+          setMessageStatus('success');
+          setModalOpen(true);
+        },
+        (error) => {
+          console.log("Error:", error.text);
+          setMessageStatus('error');
+          setModalOpen(true);
+        }
+      );
+    }
+  };
+  
+  // Function to close the modal and reset the form
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setMessageStatus(null);
+    if (form.current) {
+      form.current.reset(); 
+    }
+  };
+  
 
   if (!isMounted) {
     return null
@@ -442,7 +482,7 @@ export default function Portfolio() {
               </div>
 
               <div className="md:w-1/2">
-                <form className="space-y-6">
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block mb-2 text-sm font-medium">
@@ -450,9 +490,11 @@ export default function Portfolio() {
                       </label>
                       <input
                         type="text"
+                        name="user_name"
                         id="name"
                         className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#B8B3E9]"
                         placeholder="John Doe"
+                        required
                       />
                     </div>
                     <div>
@@ -461,9 +503,11 @@ export default function Portfolio() {
                       </label>
                       <input
                         type="email"
+                        name="user_email"
                         id="email"
                         className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#B8B3E9]"
                         placeholder="john@example.com"
+                        required
                       />
                     </div>
                   </div>
@@ -474,9 +518,11 @@ export default function Portfolio() {
                     </label>
                     <input
                       type="text"
+                      name="subject"
                       id="subject"
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#B8B3E9]"
                       placeholder="Project Inquiry"
+                      required
                     />
                   </div>
 
@@ -485,10 +531,12 @@ export default function Portfolio() {
                       Message
                     </label>
                     <textarea
+                      name="message"
                       id="message"
                       rows={5}
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-[#B8B3E9]"
                       placeholder="Your message here..."
+                      required
                     ></textarea>
                   </div>
 
@@ -499,6 +547,27 @@ export default function Portfolio() {
                     Send Message
                   </button>
                 </form>
+
+                {/* Modal */}
+                {modalOpen && (
+                  <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center">
+                    <div className="bg-white p-6 rounded-lg w-80 text-center">
+                      {messageStatus === 'success' ? (
+                        <p className="text-green-600">Your message has been sent successfully!</p>
+                      ) : (
+                        <p className="text-red-600">There was an error sending your message. Please try again.</p>
+                      )}
+                      <button
+                        onClick={handleCloseModal}
+                        className="bg-[#B8B3E9] text-white px-4 py-2 mt-4 rounded-md hover:bg-[#6b65a1]"
+                      >
+                        OK
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+
               </div>
             </div>
           </div>
