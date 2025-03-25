@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJs, faHtml5, faCss3Alt, faReact, faNodeJs, faAndroid, faTrello, faGithub, faGitAlt, faAws  } from "@fortawesome/free-brands-svg-icons";
 import {faArrowRightArrowLeft, faBolt, faDatabase} from "@fortawesome/free-solid-svg-icons";
 
+
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -235,30 +236,39 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="md:w-1/2 flex justify-center">
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#B8B3E9] ">
-                    <Image src="/img/girl.jpg?height=400&width=400" alt="Profile" fill sizes="(max-width: 768px) 100vw, 50vw" priority className="object-cover"/>
-                </div>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 2xl:w-96 2xl:h-96 rounded-full overflow-hidden border-4 border-[#B8B3E9]">
+                <Image
+                  src="/img/girl.jpg?height=400&width=400"
+                  alt="Profile"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                  className="object-cover"
+                />
+              </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className=" bg-[#1e1e24] bg-opacity-80 mb-10">
+        <section id="about" className="min-h-screen py-10 bg-[#1e1e24] bg-opacity-80 mb-10">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               About <span className="text-[#B8B3E9]">Me</span>
             </h2>
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
-                <div className="relative w-full max-w-xs h-[400px] rounded-2xl overflow-hidden border-4 border-[#B8B3E9]  shadow-lg shadow-[#D1D1D1]">
-                    <Image
-                        src="/img/user.jpeg?height=400&width=300"
-                        alt="About Me"
-                        fill
-                        sizes="(max-width: 768px) 80vw, 30vw"
-                        className="object-cover"
-                    />
+                <div className="relative w-full max-w-xs min-w-[200px] h-[400px] rounded-2xl overflow-hidden border-4 border-[#B8B3E9] shadow-lg shadow-[#D1D1D1]">
+                  <Image
+                    src="/img/user.jpeg"
+                    alt="About Me"
+                    width={300}
+                    height={400}
+                    className="object-cover w-full h-full"
+
+                  />
+
                 </div>
               </div>
               <div className="md:w-1/2">
@@ -300,7 +310,7 @@ export default function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-20 bg-[#1e1e24]">
+        <section id="skills" className="min-h-screen py-10 bg-[#1e1e24]">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               My <span className="text-[#B8B3E9]">Skills</span>
@@ -376,7 +386,7 @@ export default function Portfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className=" bg-[#1e1e24] bg-opacity-80 mb-20">
+        <section id="projects" className="min-h-screen py-10 bg-[#1e1e24] bg-opacity-80 mb-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               My <span className="text-[#B8B3E9]">Projects</span>
@@ -386,24 +396,26 @@ export default function Portfolio() {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-gray-800  rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
+                  className="bg-gray-800  rounded-lg overflow-hidden hover:transform hover:bg-[#234250] transition-transform duration-300"
                 >
                   <div className="relative h-48">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <p className="text-gray-300 mb-4 text-sm">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="border border-[#B8B3E9] bg-opacity-20 text-[#B8B3E9] text-sm px-3 py-1 rounded-full"
+                          className="bg-opacity-20 text-[#B8B3E9] text-sm  rounded-full"
                         >
                           {tag}
                         </span>
@@ -435,7 +447,7 @@ export default function Portfolio() {
 
         
         {/* Contact Section */}
-        <section id="contact" className=" bg-[#1e1e24] bg-opacity-80 mb-10">
+        <section id="contact" className="min-h-screen py-10 bg-[#1e1e24] bg-opacity-80">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               Contact <span className="text-[#B8B3E9]">Me</span>
@@ -482,8 +494,8 @@ export default function Portfolio() {
               </div>
 
               <div className="md:w-1/2">
-                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form ref={form} onSubmit={handleSubmit} className="space-y-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block mb-2 text-sm font-medium">
                         Your Name
