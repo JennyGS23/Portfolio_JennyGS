@@ -142,10 +142,11 @@ export default function Home(){
   }
 
   return (
-    <div className="min-h-screen bg-[#1e1e24] text-white">
+    <div className="min-h-screen bg-[#1e1e24] text-white w-full overflow-hidden">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#1e1e24] shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#1e1e24] shadow-md w-full overflow-hidden">
+        <div className="max-w-screen-xl w-full px-4 py-4 flex justify-between items-center mx-auto">
+
           <div className="text-[#B8B3E9] text-2xl font-bold">PortfolioJGS</div>
 
           {/* Desktop Navigation */}
@@ -195,10 +196,10 @@ export default function Home(){
         )}
       </header>
 
-      <main className="pt-20">
+      <main className="pt-8 sm:pt-20">
         {/* Home Section */}
         <section id="home" className="min-h-screen flex items-center">
-          <div className="container mx-auto px-4 py-16">
+          <div className="container mx-auto px-4 pt-12 pb-16 sm:py-16">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-10 md:mb-0">
               <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -286,7 +287,7 @@ export default function Home(){
                     on my ability to collaborate efficiently within teams, guided by clear communication and leadership. 
                     I am committed to excellence and always aim to deliver the best in every task I take on.
                 </p>
-                <div className="grid grid-cols-2 gap-2 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   <div>
                     <p className="text-gray-400">Name:</p>
                     <p>Jennifer González</p>
@@ -301,10 +302,10 @@ export default function Home(){
                   </div>
                   <div>
                     <p className="text-gray-400">Experience:</p>
-                    <p> 4 years of academic experience</p>
+                    <p>4 years of academic experience</p>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -588,7 +589,7 @@ export default function Home(){
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-8">
+      <footer className="bg-gray-900 py-4 sm:py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">2025 Jennifer González - All Rights Reserved</p>
         </div>
