@@ -590,7 +590,7 @@ export default function Home(){
       {/* Footer */}
       <footer className="bg-gray-900 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">&copy; {new Date().getFullYear()} 2025 Jennifer González - All Rights Reserved</p>
+          <p className="text-gray-400">2025 Jennifer González - All Rights Reserved</p>
         </div>
       </footer>
     </div>
