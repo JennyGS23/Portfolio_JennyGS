@@ -201,13 +201,14 @@ export default function Home(){
           <div className="container mx-auto px-4 py-16">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-10 md:mb-0">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  Hi, I'm <span className="text-[#B8B3E9]">Jennifer Gonzalez</span>
-                </h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                Hi, I&apos;m <span className="text-[#B8B3E9]">Jennifer Gonzalez</span>
+              </h1>
+
                 <h2 className="text-2xl md:text-3xl mb-6">Computer Engineer</h2>
                 <p className="text-lg mb-8 text-gray-300 max-w-lg">
                     Welcome to my portfolio! Here you will find information about me, my projects, and the experience 
-                    I've gained throughout my career. Feel free to explore and learn more about my work and skills.
+                    I&apos;ve gained throughout my career. Feel free to explore and learn more about my work and skills.
                 </p>
                 <div className="flex space-x-4">
                   <button
