@@ -8,7 +8,7 @@ import { faJs, faHtml5, faCss3Alt, faReact, faNodeJs, faAndroid, faTrello, faGit
 import {faArrowRightArrowLeft, faBolt, faDatabase} from "@fortawesome/free-solid-svg-icons";
 
 
-export default function Portfolio() {
+export default function Home(){
   const [activeSection, setActiveSection] = useState("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
