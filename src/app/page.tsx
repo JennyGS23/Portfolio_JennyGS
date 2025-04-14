@@ -70,7 +70,7 @@ export default function Home(){
     {
       title: "MedExpert",
       description: "An application designed to centralize and facilitate access to patient health information, providing detailed tracking of their medical history, appointments, medications, and diagnoses.",
-      image: "/img/medxpert.png?height=300&width=400",
+      image: "/img/medxpert.PNG?height=300&width=400",
       tags: ["Android", "Java", "Firebase", "XML"],
       githubLink: "https://github.com/bryan-ruiz/MedXpert",
     },
